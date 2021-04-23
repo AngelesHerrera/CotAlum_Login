@@ -24,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Email"
             android:inputType="textEmailAddress"
             tools:text="Email" />
 
@@ -36,6 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Password"
             android:inputType="textPassword"
             tools:text="Contraseña" />
 
@@ -68,16 +70,6 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="8dp" />
-
-        <Button
-            android:id="@+id/googleButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableStart="@mipmap/google"
-            android:paddingStart="16dp"
-            android:text="Google"
-            android:textAlignment="textStart"
-            android:textColor="?attr/colorPrimaryDark" />
 
     </LinearLayout>
 
