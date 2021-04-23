@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "863430823837",
+    "project_id": "cotalumlogin",
+    "storage_bucket": "cotalumlogin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863430823837:android:acf960321a7e7c21a8a974",
+        "android_client_info": {
+          "package_name": "com.example.cotalum_login"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "863430823837-sj7adporv51fh8f8ieg1annsfrdn89e9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cotalum_login",
+            "certificate_hash": "20c5fa3b029ac3f7f43855dca4723afa9441c504"
+          }
+        },
+        {
+          "client_id": "863430823837-ehok3om5cphengs80v9m94th5to20mfq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtXX7tdKTV-Z5uQKtenrFZvHv53da7RjE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "863430823837-ehok3om5cphengs80v9m94th5to20mfq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
