@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
     //private val GOOGLE_SIGN_IN = 100
+
         lateinit var signUp: Button
         lateinit var loginB: Button
         lateinit var emailE: EditText

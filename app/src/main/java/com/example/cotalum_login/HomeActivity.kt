@@ -38,7 +38,7 @@ class HomeActivity : AppCompatActivity(){
     }
     private fun setup(email: String, provider: String){
         title="Inicio"
-        emailE.text= email
+        emailE.text = email
         providerTextView.text = provider
 
         logOutButton.setOnClickListener {
