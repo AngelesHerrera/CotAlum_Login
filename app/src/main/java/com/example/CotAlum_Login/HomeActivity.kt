@@ -1,9 +1,8 @@
-package com.example.cotalum_login
+package com.example.CotAlum_Login
 
 import android.content.Context
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth

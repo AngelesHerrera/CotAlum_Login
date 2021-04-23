@@ -1,4 +1,4 @@
-package com.example.cotalum_login
+package com.example.CotAlum_Login
 
 import org.junit.Test
 
