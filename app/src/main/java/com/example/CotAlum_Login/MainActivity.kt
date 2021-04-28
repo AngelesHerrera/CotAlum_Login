@@ -11,7 +11,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 
 class MainActivity : AppCompatActivity() {
-    //private val GOOGLE_SIGN_IN = 100
 
     lateinit var signUp: Button
     lateinit var loginB: Button
@@ -89,20 +88,4 @@ class MainActivity : AppCompatActivity() {
         startActivity(homeIntent)
     }
 }
-    //override fun onStart() {
-    //    super.onStart()
-    //   authLayout.visibility = View.VISIBLE
-    //}
-
-    // private fun session() {
-    //   val prefs = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
-    //  val email = prefs.getString("email", null)
-    //  val provider = prefs.getString("provider", null)
-
-    // if (email != null && provider != null) {
-    //    authLayout.visibility = View.INVISIBLE
-    //    showHome(email, ProviderType.valueOf(provider))
-    // }
-
-    // }
 
