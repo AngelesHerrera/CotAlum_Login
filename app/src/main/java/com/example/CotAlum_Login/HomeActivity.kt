@@ -28,7 +28,7 @@ class HomeActivity : AppCompatActivity(){
         emailT = findViewById(R.id.emailTextView)
         providerTextView = findViewById(R.id.providerTextView)
         logOutButton=findViewById(R.id.logOutButton)
-        preciosButton=findViewById(R.id.preciosButton)
+        preciosButton=findViewById(R.id.PreciosButton)
         usuariosButton=findViewById(R.id.UsuariosButton)
         //Setup
         val analytics = FirebaseAnalytics.getInstance(this)
@@ -54,7 +54,8 @@ class HomeActivity : AppCompatActivity(){
         }
         preciosButton.setOnClickListener {
             FirebaseAuth.getInstance()
-            showHomeP(email ?: "", ProviderType.BASIC)
+            showHomePrecios(email ?: "", ProviderType.BASIC)
+//            setContentView(R.layout.activity_precios)
         }
 
     }
@@ -65,11 +66,11 @@ class HomeActivity : AppCompatActivity(){
         }
         startActivity(homeIntent)
     }
-    private fun showHomeP(email: String, provider: ProviderType) {
-        val homeIntentp = Intent(this, Precios::class.java).apply {
+    private fun showHomePrecios(email: String, provider: ProviderType) {
+        val Intent = Intent(this, Precios::class.java).apply {
             putExtra("email", email)
             putExtra("provider", provider.name)
         }
-        startActivity(homeIntentp)
+        startActivity(Intent)
     }
 }

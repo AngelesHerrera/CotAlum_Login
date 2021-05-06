@@ -32,7 +32,6 @@ class Precios : AppCompatActivity() {
         val provider = bundle?.getString("provider")
         setup(email ?: "", provider ?: "")
 
-
     }
 
     private fun setup(email: String, provider: String) {

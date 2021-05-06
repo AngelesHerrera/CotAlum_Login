@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/preciosButton"
+            android:id="@+id/PreciosButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Precios" />
