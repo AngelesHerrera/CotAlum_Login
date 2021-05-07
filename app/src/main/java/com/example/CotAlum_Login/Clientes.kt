@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 
-class Usuarios : AppCompatActivity() {
+class Clientes : AppCompatActivity() {
     lateinit var emailT: TextView
     lateinit var providerTextView: TextView
     lateinit var clienteTextView: EditText
@@ -23,7 +23,7 @@ class Usuarios : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_usuarios)
+        setContentView(R.layout.activity_clientes)
 
         emailT = findViewById(R.id.emailTextView2)
         providerTextView = findViewById(R.id.providerTextView2)
@@ -44,12 +44,12 @@ class Usuarios : AppCompatActivity() {
     }
 
     private fun setup(email: String, provider: String) {
-        title = "Usuarios"
+        title = "Clientes"
         emailT.text = email
         providerTextView.text = provider
 
         saveButton.setOnClickListener {
-            db.collection("users").document(email).set(
+            db.collection("Clientes").document(email).set(
                 hashMapOf("provider" to provider,
                     "cliente" to clienteTextView.text.toString(),
                     "address" to addressTextView.text.toString(),
@@ -59,7 +59,7 @@ class Usuarios : AppCompatActivity() {
             Toast.makeText(this, "se guardo", Toast.LENGTH_LONG).show()
         }
         getButton.setOnClickListener {
-            db.collection("users").document(email).get().addOnSuccessListener {
+            db.collection("Clientes").document(email).get().addOnSuccessListener {
                 clienteTextView.setText(it.get("cliente")as String?)
                 addressTextView.setText(it.get("address") as String?)
                 phoneTextView.setText(it.get("phone") as String?)
@@ -67,7 +67,7 @@ class Usuarios : AppCompatActivity() {
             }
         }
         deleteButton.setOnClickListener {
-            db.collection("users").document(email).delete()
+            db.collection("Clientes").document(email).delete()
             Toast.makeText(this, "se elimino", Toast.LENGTH_LONG).show()
         }
     }

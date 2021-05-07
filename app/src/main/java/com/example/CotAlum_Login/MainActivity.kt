@@ -15,8 +15,7 @@ import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
-    lateinit var emailT: TextView
-    lateinit var providerTextView: TextView
+
     lateinit var signUp: Button
     lateinit var loginB: Button
     lateinit var emailE: EditText
@@ -40,11 +39,11 @@ class MainActivity : AppCompatActivity() {
         analytics.logEvent("InitScreen", bundle)
         //setup()
         //if (getSharedPreferences("mis datos", Context.MODE_PRIVATE).toString().isNotEmpty()) {
-            //setContentView(R.layout.activity_home)
+        //setContentView(R.layout.activity_home)
         //} else {
 
-          setup()
-       // }
+        setup()
+        // }
 
     }
 
@@ -55,8 +54,8 @@ class MainActivity : AppCompatActivity() {
             if (emailE.text.isNotEmpty() && pass.text.isNotEmpty()) {
 
                 FirebaseAuth.getInstance()
-                    .createUserWithEmailAndPassword(emailE.text.toString(), pass.text.toString()).addOnCompleteListener {
-                        if (it.isSuccessful) {
+                        .createUserWithEmailAndPassword(emailE.text.toString(), pass.text.toString()).addOnCompleteListener {
+                            if (it.isSuccessful) {
                                 /*val preferencias = getSharedPreferences("mis datos", Context.MODE_PRIVATE)
                                 val nuevo = emailE.text.toString()
                                 val nuevo1 = pass.text.toString()
@@ -66,36 +65,36 @@ class MainActivity : AppCompatActivity() {
                                 editor.commit()
                                 emailT.text=nuevo
                                 providerTextView.text=nuevo1*/
-                            showHome(it.result?.user?.email ?: "", ProviderType.BASIC)
-                            Toast.makeText(this, "Usuario registrado", Toast.LENGTH_LONG).show()
-                        } else {
-                            Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_LONG).show()
+                                showHome(it.result?.user?.email ?: "", ProviderType.BASIC)
+                                Toast.makeText(this, "Usuario registrado", Toast.LENGTH_LONG).show()
+                            } else {
+                                Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_LONG).show()
+                            }
                         }
-                    }
             }
         }
         //acceder
         loginB.setOnClickListener {
             if (emailE.text.isNotEmpty() && pass.text.isNotEmpty()) {
                 FirebaseAuth.getInstance()
-                    .signInWithEmailAndPassword(emailE.text.toString(), pass.text.toString()).addOnCompleteListener {
-                        if (it.isSuccessful) {
-                            showHome(it.result?.user?.email ?: "", ProviderType.BASIC)
-                            /*val preferencias = getSharedPreferences("mis datos", Context.MODE_PRIVATE)
-                            val nuevo = emailE.text.toString()
-                            val nuevo1 = pass.text.toString()
-                            val editor = preferencias.edit()
-                            editor.putString("email", nuevo)
-                            editor.putString("contraseña", nuevo1)
-                            editor.commit()
-                            emailT.text=nuevo
-                            providerTextView.text=nuevo1*/
-                            showHome(it.result?.user?.email ?: "", ProviderType.BASIC)
-                            Toast.makeText(this, "accedido", Toast.LENGTH_LONG).show()
-                        } else {
-                            Toast.makeText(this, "Hubo un error al ingresar", Toast.LENGTH_LONG).show()
+                        .signInWithEmailAndPassword(emailE.text.toString(), pass.text.toString()).addOnCompleteListener {
+                            if (it.isSuccessful) {
+                                //showHome(it.result?.user?.email ?: "", ProviderType.BASIC)
+                                /*val preferencias = getSharedPreferences("mis datos", Context.MODE_PRIVATE)
+                                val nuevo = emailE.text.toString()
+                                val nuevo1 = pass.text.toString()
+                                val editor = preferencias.edit()
+                                editor.putString("email", nuevo)
+                                editor.putString("contraseña", nuevo1)
+                                editor.commit()
+                                emailT.text=nuevo
+                                providerTextView.text=nuevo1*/
+                                showHome(it.result?.user?.email ?: "", ProviderType.BASIC)
+                                Toast.makeText(this, "accedido", Toast.LENGTH_LONG).show()
+                            } else {
+                                Toast.makeText(this, "Hubo un error al ingresar", Toast.LENGTH_LONG).show()
+                            }
                         }
-                    }
             }
         }
     }
@@ -109,4 +108,3 @@ class MainActivity : AppCompatActivity() {
         startActivity(homeIntent)
     }
 }
-

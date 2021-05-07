@@ -19,6 +19,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <Button
             android:id="@+id/PreciosButton"
             android:layout_width="match_parent"
@@ -30,10 +34,10 @@
             android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/UsuariosButton"
+            android:id="@+id/ClientesButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Usuarios" />
+            android:text="Clientes" />
 
         <Space
             android:layout_width="match_parent"

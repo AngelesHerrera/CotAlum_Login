@@ -8,60 +8,205 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:orientation="vertical">
-
-            <EditText
-                android:id="@+id/riel3"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_weight="1"
-                android:hint='Riel3"' />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="?attr/colorPrimaryVariant"
+                android:numeric="integer"
+                android:text="    Ingresa los precios de:"
+                android:textColor="@color/white"
+                app:autoSizeTextType="uniform" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
                 android:layout_weight="1" />
 
             <EditText
                 android:id="@+id/riel2"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="40dp"
-                android:layout_weight="1"
-                android:hint='Riel 2"' />
+                android:layout_gravity="center"
+                android:hint='Riel 2"'
+                android:numeric="signed" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="10dp"
                 android:layout_weight="1" />
 
             <EditText
-                android:id="@+id/jamba2"
-                android:layout_width="match_parent"
+                android:id="@+id/riel3"
+                android:layout_width="300dp"
                 android:layout_height="40dp"
-                android:layout_weight="1"
-                android:hint='jamba2"' />
+                android:layout_gravity="center"
+                android:hint='Riel 3"'
+                android:numeric="signed"/>
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+
+
+
+            <EditText
+                android:id="@+id/jamba2"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:hint='jamba 2"'
+                android:numeric="signed"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
                 android:layout_weight="1" />
 
             <EditText
                 android:id="@+id/jamba3"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="40dp"
-                android:layout_weight="1"
-                android:hint='Jamba3"' />
+                android:layout_gravity="center"
+                android:hint='Jamba 3"'
+                android:numeric="signed"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+            <EditText
+                android:id="@+id/cercochapa2"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:hint='Cerco chapa 2"'
+                android:numeric="signed"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+            <EditText
+                android:id="@+id/cercochapa3"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:hint='Cerco chapa 3"'
+                android:numeric="signed"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+
+            <EditText
+                android:id="@+id/traslape2"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:hint='Traslape 2"'
+                android:numeric="signed"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+
+            <EditText
+                android:id="@+id/traslape3"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:hint='Traslape 3"'
+                android:numeric="signed"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+
+            <EditText
+                android:id="@+id/zoclopuerta2"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:hint='Zoclo Puerta 2"'
+                android:numeric="signed"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+            <EditText
+                android:id="@+id/zoclopuerta3"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:hint='Zoclo Puerta 3"'
+                android:numeric="signed"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+
+            <EditText
+                android:id="@+id/cabezal2"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:hint='Cabezal 2"'
+                android:numeric="signed"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+
+            <EditText
+                android:id="@+id/cabezal3"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:hint='Cabezal 2"'
+                android:numeric="signed"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+            <EditText
+                android:id="@+id/verticalMosquitero"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:hint='Vertical Mosquitero'
+                android:numeric="signed"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="1" />
+            <EditText
+                android:id="@+id/horizontalMosquitero"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:hint='Horizontal Mosquitero'
+                android:numeric="signed"/>
 
             <Space
                 android:layout_width="match_parent"
@@ -70,49 +215,54 @@
 
             <Button
                 android:id="@+id/saveButton2"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
                 android:text="Guardar" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="10dp" />
 
             <Button
                 android:id="@+id/getButton2"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
                 android:text="Recuperar" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="10dp" />
 
             <Button
                 android:id="@+id/deleteButton2"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="50dp"
+                android:layout_gravity="center"
                 android:text="Eliminar" />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="10dp" />
 
             <TextView
                 android:id="@+id/emailTextView3"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="20dp"
-                android:hint="Email"
-                app:layout_constraintBottom_toTopOf="@+id/providerTextView2" />
+                android:layout_gravity="center"
+                android:hint="Email" />
 
             <TextView
                 android:id="@+id/providerTextView3"
-                android:layout_width="match_parent"
+                android:layout_width="300dp"
                 android:layout_height="20dp"
+                android:layout_gravity="center"
                 android:layout_marginBottom="20dp"
                 android:hint="Contraseña"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                tools:layout_editor_absoluteY="691dp" />
         </LinearLayout>
     </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

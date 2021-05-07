@@ -18,7 +18,7 @@ class HomeActivity : AppCompatActivity(){
     lateinit var providerTextView: TextView
     lateinit var logOutButton: Button
     lateinit var preciosButton: Button
-    lateinit var usuariosButton: Button
+    lateinit var clientesButton: Button
     private val db= FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?){
@@ -29,7 +29,7 @@ class HomeActivity : AppCompatActivity(){
         providerTextView = findViewById(R.id.providerTextView)
         logOutButton=findViewById(R.id.logOutButton)
         preciosButton=findViewById(R.id.PreciosButton)
-        usuariosButton=findViewById(R.id.UsuariosButton)
+        clientesButton=findViewById(R.id.ClientesButton)
         //Setup
         val analytics = FirebaseAnalytics.getInstance(this)
         val bundle = intent.extras
@@ -48,7 +48,7 @@ class HomeActivity : AppCompatActivity(){
             FirebaseAuth.getInstance().signOut()
             onBackPressed()
         }
-        usuariosButton.setOnClickListener {
+        clientesButton.setOnClickListener {
             FirebaseAuth.getInstance()
             showHome(email ?: "", ProviderType.BASIC)
         }
@@ -60,7 +60,7 @@ class HomeActivity : AppCompatActivity(){
 
     }
     private fun showHome(email: String, provider: ProviderType) {
-        val homeIntent = Intent(this, Usuarios::class.java).apply {
+        val homeIntent = Intent(this, Clientes::class.java).apply {
             putExtra("email", email)
             putExtra("provider", provider.name)
         }
