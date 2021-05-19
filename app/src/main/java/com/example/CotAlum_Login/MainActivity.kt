@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
                                 showHome(it.result?.user?.email ?: "", ProviderType.BASIC)
                                 Toast.makeText(this, "accedido", Toast.LENGTH_LONG).show()
                             } else {
-                                Toast.makeText(this, "Hubo un error al ingresar", Toast.LENGTH_LONG).show()
+                                Toast.makeText(this, "Hubo un error al ingresar, verifica tu Conexion", Toast.LENGTH_LONG).show()
                             }
                         }
             }

@@ -13,10 +13,12 @@ import com.google.firebase.firestore.FirebaseFirestore
 class Clientes : AppCompatActivity() {
     lateinit var emailT: TextView
     lateinit var providerTextView: TextView
+    lateinit var buscarTextView: EditText
     lateinit var clienteTextView: EditText
     lateinit var addressTextView: EditText
     lateinit var phoneTextView: EditText
     lateinit var saveButton: Button
+    lateinit var buscarButton: Button
     lateinit var getButton: Button
     lateinit var deleteButton: Button
     private val db = FirebaseFirestore.getInstance()
@@ -27,10 +29,12 @@ class Clientes : AppCompatActivity() {
 
         emailT = findViewById(R.id.emailTextView2)
         providerTextView = findViewById(R.id.providerTextView2)
+        buscarTextView = findViewById(R.id.BuscarTextView)
         clienteTextView = findViewById(R.id.ClienteTextView)
         addressTextView = findViewById(R.id.addresstextView)
         phoneTextView = findViewById(R.id.phoneTextView)
         saveButton=findViewById(R.id.saveButton)
+        buscarButton=findViewById(R.id.BuscarButton)
         deleteButton = findViewById(R.id.deleteButton)
         getButton=findViewById(R.id.getButton)
 
@@ -44,12 +48,12 @@ class Clientes : AppCompatActivity() {
     }
 
     private fun setup(email: String, provider: String) {
-        title = "Clientes"
+        title = "Registrar Clientes"
         emailT.text = email
         providerTextView.text = provider
 
         saveButton.setOnClickListener {
-            db.collection("Clientes").document(email).set(
+            db.collection("Clientes").document(phoneTextView.text.toString()).set(
                 hashMapOf("provider" to provider,
                     "cliente" to clienteTextView.text.toString(),
                     "address" to addressTextView.text.toString(),
@@ -59,11 +63,19 @@ class Clientes : AppCompatActivity() {
             Toast.makeText(this, "se guardo", Toast.LENGTH_LONG).show()
         }
         getButton.setOnClickListener {
-            db.collection("Clientes").document(email).get().addOnSuccessListener {
+            db.collection("Clientes").document(phoneTextView.text.toString()).get().addOnSuccessListener {
                 clienteTextView.setText(it.get("cliente")as String?)
                 addressTextView.setText(it.get("address") as String?)
                 phoneTextView.setText(it.get("phone") as String?)
-                Toast.makeText(this, "Datos recuperados", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Datos modificados", Toast.LENGTH_LONG).show()
+            }
+        }
+        buscarButton.setOnClickListener {
+            db.collection("Clientes").document(buscarTextView.text.toString()).get().addOnSuccessListener {
+                clienteTextView.setText(it.get("cliente")as String?)
+                addressTextView.setText(it.get("address") as String?)
+                phoneTextView.setText(it.get("phone") as String?)
+                Toast.makeText(this, "Datos Encontrados", Toast.LENGTH_LONG).show()
             }
         }
         deleteButton.setOnClickListener {
