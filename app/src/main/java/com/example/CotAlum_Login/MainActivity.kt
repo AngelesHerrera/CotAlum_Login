@@ -3,11 +3,9 @@ package com.example.CotAlum_Login
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
@@ -15,7 +13,7 @@ import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
-
+    lateinit var authLayout: LinearLayout
     lateinit var signUp: Button
     lateinit var loginB: Button
     lateinit var emailE: EditText
@@ -29,24 +27,38 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //analytics Event
+        authLayout = findViewById(R.id.authLayout)
         signUp = findViewById(R.id.signUpButton)
         loginB = findViewById(R.id.logInButton)
         emailE = findViewById(R.id.emailEditText)
         pass = findViewById(R.id.passwordEditText)
+        //analitics event
         val analytics = FirebaseAnalytics.getInstance(this)
         val bundle = Bundle()
         bundle.putString("message", "Integracion de Firebase completa")
         analytics.logEvent("InitScreen", bundle)
         //setup()
-        //if (getSharedPreferences("mis datos", Context.MODE_PRIVATE).toString().isNotEmpty()) {
-        //setContentView(R.layout.activity_home)
-        //} else {
+
 
         setup()
-        // }
+        session()
 
     }
 
+    override fun onStart() {
+        super.onStart()
+        authLayout.visibility =View.VISIBLE
+    }
+    private fun session(){
+        val prefs  = getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
+        val email = prefs.getString("email",null)
+        val provider= prefs.getString("provider",null)
+        if(email != null && provider !=null){
+            authLayout.visibility = View.INVISIBLE
+            showHome(email, ProviderType.valueOf(provider))
+        }
+
+    }
     //crear usuario
     private fun setup() {
         title = "Autentificacion"
@@ -56,15 +68,6 @@ class MainActivity : AppCompatActivity() {
                 FirebaseAuth.getInstance()
                         .createUserWithEmailAndPassword(emailE.text.toString(), pass.text.toString()).addOnCompleteListener {
                             if (it.isSuccessful) {
-                                /*val preferencias = getSharedPreferences("mis datos", Context.MODE_PRIVATE)
-                                val nuevo = emailE.text.toString()
-                                val nuevo1 = pass.text.toString()
-                                val editor = preferencias.edit()
-                                editor.putString("email", nuevo)
-                                editor.putString("contraseña", nuevo1)
-                                editor.commit()
-                                emailT.text=nuevo
-                                providerTextView.text=nuevo1*/
                                 showHome(it.result?.user?.email ?: "", ProviderType.BASIC)
                                 Toast.makeText(this, "Usuario registrado", Toast.LENGTH_LONG).show()
                             } else {
@@ -79,16 +82,6 @@ class MainActivity : AppCompatActivity() {
                 FirebaseAuth.getInstance()
                         .signInWithEmailAndPassword(emailE.text.toString(), pass.text.toString()).addOnCompleteListener {
                             if (it.isSuccessful) {
-                                //showHome(it.result?.user?.email ?: "", ProviderType.BASIC)
-                                /*val preferencias = getSharedPreferences("mis datos", Context.MODE_PRIVATE)
-                                val nuevo = emailE.text.toString()
-                                val nuevo1 = pass.text.toString()
-                                val editor = preferencias.edit()
-                                editor.putString("email", nuevo)
-                                editor.putString("contraseña", nuevo1)
-                                editor.commit()
-                                emailT.text=nuevo
-                                providerTextView.text=nuevo1*/
                                 showHome(it.result?.user?.email ?: "", ProviderType.BASIC)
                                 Toast.makeText(this, "accedido", Toast.LENGTH_LONG).show()
                             } else {

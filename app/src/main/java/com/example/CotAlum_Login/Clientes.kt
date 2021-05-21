@@ -71,12 +71,18 @@ class Clientes : AppCompatActivity() {
             }
         }
         buscarButton.setOnClickListener {
-            db.collection("Clientes").document(buscarTextView.text.toString()).get().addOnSuccessListener {
-                clienteTextView.setText(it.get("cliente")as String?)
-                addressTextView.setText(it.get("address") as String?)
-                phoneTextView.setText(it.get("phone") as String?)
-                Toast.makeText(this, "Datos Encontrados", Toast.LENGTH_LONG).show()
+            db.collection("Clientes").document(buscarTextView.text.toString()).get().addOnSuccessListener{
+                if(it.exists()){
+                    clienteTextView.setText(it.get("cliente")as String?)
+                    addressTextView.setText(it.get("address") as String?)
+                    phoneTextView.setText(it.get("phone") as String?)
+                    Toast.makeText(this, "Datos Encontrados", Toast.LENGTH_LONG).show()
+                }else{
+                    Toast.makeText(this, "Datos no Encontrados", Toast.LENGTH_LONG).show()
+                }
+
             }
+
         }
         deleteButton.setOnClickListener {
             db.collection("Clientes").document(email).delete()
