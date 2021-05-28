@@ -20,6 +20,7 @@ class HomeActivity : AppCompatActivity(){
     lateinit var logOutButton: Button
     lateinit var preciosButton: Button
     lateinit var clientesButton: Button
+    lateinit var cotizarButton: Button
     private val db= FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?){
@@ -30,7 +31,8 @@ class HomeActivity : AppCompatActivity(){
         providerTextView = findViewById(R.id.providerTextView)
         logOutButton=findViewById(R.id.logOutButton)
         preciosButton=findViewById(R.id.PreciosButton)
-        clientesButton=findViewById(R.id.ClientesButton)
+        clientesButton=findViewById(R.id.CotizarButton)
+        cotizarButton=findViewById(R.id.CotizacionButton)
         //Setup
         val analytics = FirebaseAnalytics.getInstance(this)
         val bundle = intent.extras
@@ -66,6 +68,10 @@ class HomeActivity : AppCompatActivity(){
             FirebaseAuth.getInstance()
             showHomePrecios(email ?: "", ProviderType.BASIC)
 //            setContentView(R.layout.activity_precios)
+        }
+        cotizarButton.setOnClickListener {
+            FirebaseAuth.getInstance()
+            setContentView(R.layout.activity_cotizacion)
         }
 
     }

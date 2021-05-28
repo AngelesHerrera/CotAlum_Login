@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CotAlum_Login">
+        <activity android:name="com.example.CotAlum_Login.Cotizar"></activity>
         <activity android:name="com.example.CotAlum_Login.Clientes"></activity>
         <activity android:name="com.example.CotAlum_Login.Precios"></activity>
         <activity android:name="com.example.CotAlum_Login.HomeActivity"></activity>

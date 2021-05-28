@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">CotAlum_Login</string>
+    <string name="app_name">CotAlum</string>
     <string name="prefs_file">CotAlum.angeles</string>
 </resources>

@@ -34,10 +34,19 @@
             android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/ClientesButton"
+            android:id="@+id/CotizarButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text="Clientes" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/CotizacionButton"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Cotizar" />
 
         <Space
             android:layout_width="match_parent"
