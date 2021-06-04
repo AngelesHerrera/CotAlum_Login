@@ -83,7 +83,7 @@ class Cotizar: AppCompatActivity(), AdapterView.OnItemSelectedListener {
                     var res5 = ((zoclo * AnchoSob).toInt())
                     var res6 = ((cabezal * AnchoSob).toInt())
                     var res7 = ((jamba * Jamba).toInt())
-                    totalVidrio = ((((AnchoEditText.text.toString().toDouble()) * (AltoEditText.text.toString().toDouble())) * (vidrio)).toInt())
+                    totalVidrio = ((((AnchoEditText.text.toString().toDouble()/100) * (AltoEditText.text.toString().toDouble()/100)) * (vidrio)).toInt())
                     var total = (res + res1 + res2 + res3 + res4 + res5 + res6 + res7)
                     var total1 = ((total * .65))
                     total1+= total
