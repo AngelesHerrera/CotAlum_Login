@@ -109,9 +109,10 @@ class Precios : AppCompatActivity() {
         }
         deleteButton.setOnClickListener {
             db.collection("Precios").document(email).delete()
-            Toast.makeText(this, "se elimino", Toast.LENGTH_LONG).show()
             limpiar()
+            Toast.makeText(this, "se elimino", Toast.LENGTH_LONG).show()
         }
+
     }
     private fun limpiar(){
         riel2.text.clear()
