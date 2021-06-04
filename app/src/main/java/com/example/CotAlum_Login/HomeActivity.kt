@@ -67,11 +67,10 @@ class HomeActivity : AppCompatActivity(){
         preciosButton.setOnClickListener {
             FirebaseAuth.getInstance()
             showHomePrecios(email ?: "", ProviderType.BASIC)
-//            setContentView(R.layout.activity_precios)
         }
         cotizarButton.setOnClickListener {
             FirebaseAuth.getInstance()
-            setContentView(R.layout.activity_cotizacion)
+            showHomeCotizar(email ?: "", ProviderType.BASIC)
         }
 
     }
@@ -84,6 +83,13 @@ class HomeActivity : AppCompatActivity(){
     }
     private fun showHomePrecios(email: String, provider: ProviderType) {
         val Intent = Intent(this, Precios::class.java).apply {
+            putExtra("email", email)
+            putExtra("provider", provider.name)
+        }
+        startActivity(Intent)
+    }
+    private fun showHomeCotizar(email: String, provider: ProviderType) {
+        val Intent = Intent(this, Cotizar::class.java).apply {
             putExtra("email", email)
             putExtra("provider", provider.name)
         }

@@ -181,8 +181,8 @@
                 android:layout_width="300dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:hint='Cabezal 2"'
-                android:numeric="signed"/>
+                android:hint='Cabezal 3"'
+                android:numeric="signed" />
 
             <Space
                 android:layout_width="match_parent"
@@ -247,13 +247,6 @@
                 android:layout_height="10dp" />
 
             <TextView
-                android:id="@+id/emailTextView3"
-                android:layout_width="300dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center"
-                android:hint="Email" />
-
-            <TextView
                 android:id="@+id/providerTextView3"
                 android:layout_width="300dp"
                 android:layout_height="20dp"
@@ -261,6 +254,13 @@
                 android:layout_marginBottom="20dp"
                 android:hint="Contraseña"
                 tools:layout_editor_absoluteY="691dp" />
+
+            <TextView
+                android:id="@+id/emailTextView3"
+                android:layout_width="300dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:hint="Email" />
         </LinearLayout>
     </ScrollView>
 

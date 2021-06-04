@@ -85,8 +85,10 @@ class Precios : AppCompatActivity() {
                     )
             )
             Toast.makeText(this, "se guardo", Toast.LENGTH_LONG).show()
+            limpiar()
         }
         getButton.setOnClickListener {
+            Toast.makeText(this, "Esperando conexion", Toast.LENGTH_LONG).show()
             db.collection("Precios").document(email).get().addOnSuccessListener {
                 riel2.setText(it.get("Riel2") as String?)
                 riel3.setText(it.get("Riel3") as String?)
@@ -108,6 +110,23 @@ class Precios : AppCompatActivity() {
         deleteButton.setOnClickListener {
             db.collection("Precios").document(email).delete()
             Toast.makeText(this, "se elimino", Toast.LENGTH_LONG).show()
+            limpiar()
         }
+    }
+    private fun limpiar(){
+        riel2.text.clear()
+        riel3.text.clear()
+        jamba2.text.clear()
+        jamba3.text.clear()
+        cercoChapa2.text.clear()
+        cercoChapa3.text.clear()
+        traslape2.text.clear()
+        traslape3.text.clear()
+        zoclo2.text.clear()
+        zoclo3.text.clear()
+        cabezal2.text.clear()
+        cabezal3.text.clear()
+        vertical.text.clear()
+        horizontal.text.clear()
     }
 }
