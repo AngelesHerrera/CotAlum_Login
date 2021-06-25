@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.CotAlum_Login">
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,11 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CotAlum_Login">
-        <activity android:name="com.example.CotAlum_Login.Cotizar"></activity>
-        <activity android:name="com.example.CotAlum_Login.Clientes"></activity>
-        <activity android:name="com.example.CotAlum_Login.Precios"></activity>
-        <activity android:name="com.example.CotAlum_Login.HomeActivity"></activity>
-        <activity android:name="com.example.CotAlum_Login.MainActivity">
+        <activity
+            android:name=".Menu_Principal"
+            android:label="@string/title_activity_menu__principal"
+            android:theme="@style/Theme.CotAlum_Login.NoActionBar"></activity>
+        <activity android:name=".userlistActivity" />
+        <activity android:name=".Cotizar" />
+        <activity android:name=".Clientes" />
+        <activity android:name=".Precios" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

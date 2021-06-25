@@ -18,6 +18,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
+
         <EditText
             android:id="@+id/BuscarTextView"
             android:layout_width="match_parent"
@@ -74,12 +76,6 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
-        <Button
-            android:id="@+id/getButton"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Modificar" />
 
         <Space
             android:layout_width="match_parent"

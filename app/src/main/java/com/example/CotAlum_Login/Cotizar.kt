@@ -15,6 +15,7 @@ class Cotizar: AppCompatActivity(), AdapterView.OnItemSelectedListener {
     lateinit var AltoEditText: EditText
     lateinit var ResultadoText: TextView
     lateinit var AnchoEditText: EditText
+    lateinit var herrajes: EditText
     lateinit var cotizarButton: Button
     lateinit var emailT: TextView
     lateinit var providerTextView: TextView
@@ -44,6 +45,7 @@ class Cotizar: AppCompatActivity(), AdapterView.OnItemSelectedListener {
         AltoEditText = findViewById(R.id.altoEdit)
         ResultadoText = findViewById(R.id.ResultadoTextView)
         AnchoEditText = findViewById(R.id.anchoEdit)
+        herrajes = findViewById(R.id.HerrajesEdit)
         cotizarButton = findViewById(R.id.CotizarButton)
         emailT = findViewById(R.id.emailTextView4)
         providerTextView = findViewById(R.id.providerTextView4)
@@ -64,7 +66,10 @@ class Cotizar: AppCompatActivity(), AdapterView.OnItemSelectedListener {
                 Toast.makeText(this, "Fala ingresar la Altura", Toast.LENGTH_LONG).show()
             } else if (AnchoEditText.text.toString().equals("")) {
                 Toast.makeText(this, "Fala ingresar el Ancho", Toast.LENGTH_LONG).show()
-            } else {
+            } else if(herrajes.text.toString().equals("")) {
+                Toast.makeText(this, "Fala ingresar $ los" +
+                        " herrajes", Toast.LENGTH_LONG).show()
+            }else{
                 redondear()
                 db.collection("Precios").document(email).get().addOnSuccessListener {
                     riel = (it.get("Riel3") as String?)!!.toInt()
@@ -83,12 +88,13 @@ class Cotizar: AppCompatActivity(), AdapterView.OnItemSelectedListener {
                     var res5 = ((zoclo * AnchoSob).toInt())
                     var res6 = ((cabezal * AnchoSob).toInt())
                     var res7 = ((jamba * Jamba).toInt())
+                    var herraje = herrajes.text.toString().toInt()
                     totalVidrio = ((((AnchoEditText.text.toString().toDouble()/100) * (AltoEditText.text.toString().toDouble()/100)) * (vidrio)).toInt())
-                    var total = (res + res1 + res2 + res3 + res4 + res5 + res6 + res7)
+                    var total = (res + res1 + res2 + res3 + res4 + res5 + res6 + res7 + herraje)
                     var total1 = ((total * .65))
                     total1+= total
                     total1+=totalVidrio
-                    ResultadoText.text = total1.toString()
+                    ResultadoText.text = "$ " + total1.toString()
                 }
             }
         }

@@ -3,8 +3,12 @@ package com.example.CotAlum_Login
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import android.widget.Spinner
 import android.widget.TextView
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
@@ -14,7 +18,11 @@ import com.google.firebase.firestore.FirebaseFirestore
 enum class ProviderType{
     BASIC,
 }
-class HomeActivity : AppCompatActivity(){
+class HomeActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
+    //spinner
+    var opciones = arrayOf("Ventana3","ventana2","Proyeccion", "Ventana1_1/2")//definir estructura
+    lateinit var spinnerOpciones: Spinner
+    //botones
     lateinit var emailT: TextView
     lateinit var providerTextView: TextView
     lateinit var logOutButton: Button
@@ -26,7 +34,7 @@ class HomeActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-
+        spinnerOpciones = findViewById(R.id.spinner)
         emailT = findViewById(R.id.emailTextView)
         providerTextView = findViewById(R.id.providerTextView)
         logOutButton=findViewById(R.id.logOutButton)
@@ -44,6 +52,14 @@ class HomeActivity : AppCompatActivity(){
         prefs.putString("email", email)
         prefs.putString("provider",provider)
         prefs.apply()
+        //spinner()
+        val adaptador = ArrayAdapter(this, android.R.layout.simple_spinner_item, opciones)
+
+        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerOpciones.adapter = adaptador
+        // para reutilizar el evento.
+        spinnerOpciones.onItemSelectedListener = this
+
 
     }
     private fun setup(email: String, provider: String){
@@ -94,5 +110,17 @@ class HomeActivity : AppCompatActivity(){
             putExtra("provider", provider.name)
         }
         startActivity(Intent)
+    }
+
+    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        if (position==0) {
+            // val email = "02angelesherrera@gmail.com"
+            //FirebaseAuth.getInstance()
+           // showHomeCotizar(email, ProviderType.BASIC)
+        }
+    }
+
+    override fun onNothingSelected(parent: AdapterView<*>?) {
+        TODO("Not yet implemented")
     }
 }

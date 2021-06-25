@@ -60,6 +60,21 @@
             android:hint='Alto'
             android:numeric="signed"
             android:textAlignment="center" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <EditText
+            android:id="@+id/HerrajesEdit"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="56dp"
+            android:hint='Herrajes'
+            android:numeric="signed"
+            android:textAlignment="center" />
 
 
         <Space
@@ -93,6 +108,7 @@
             android:layout_gravity="center"
             android:foregroundTint="#F44336"
             android:gravity="center"
+            android:hint="$ 0.00"
             android:numeric="signed"
             android:textAlignment="center"
             android:textSize="24sp"
